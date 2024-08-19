@@ -1,6 +1,8 @@
 <template>
   <div class="home">
-    <LightMap />
+    <!-- <LightMap /> -->
+     <a href="esg">Esg</a>
+     <a href="map">Map</a>
   </div>
 </template>
 

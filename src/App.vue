@@ -27,4 +27,7 @@ nav {
     }
   }
 }
+*{
+  box-sizing: border-box;
+}
 </style>

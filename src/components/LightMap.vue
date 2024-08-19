@@ -11,6 +11,7 @@ export default {
 		this.initThreeJS();
 		this.addResizeListener();
 	},
+
 	beforeUnmount() {
 		if (this.resizeObserver) {
 			this.resizeObserver.disconnect();
