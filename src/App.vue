@@ -15,6 +15,10 @@
   color: #2c3e50;
 }
 
+*{
+  list-style-type: none;
+}
+
 nav {
   padding: 30px;
 

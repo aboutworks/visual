@@ -59,7 +59,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 :root{
 	--contentBoxHeight: calc(100vh - 74px);
 }
@@ -83,10 +83,6 @@ main {
 	width: 100vw;
 }
 
-/* .map svg {
-	width: 100vw;
-	height: 100vh;
-} */
 .contentBox {
 	height: var(--contentBoxHeight)
 }

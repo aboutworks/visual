@@ -3,6 +3,7 @@
     <!-- <LightMap /> -->
      <a href="esg">Esg</a>
      <a href="map">Map</a>
+     <a href="senkon">Senkon</a>
   </div>
 </template>
 
@@ -17,3 +18,16 @@ export default {
   }
 }
 </script>
+<style scoped>
+.home{
+  height: 100vh;
+  width:100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+a{
+  font-size: 2rem;
+  padding:1rem;
+}
+</style>

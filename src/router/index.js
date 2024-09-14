@@ -22,7 +22,11 @@ const routes = [
     name: 'map',
     component: () => import(/* webpackChunkName: "about" */ '../views/MapView.vue')
   },
-
+  {
+    path: '/senkon',
+    name: 'senkon',
+    component: () => import(/* webpackChunkName: "about" */ '../views/SenkonView.vue')
+  },
 ]
 
 const router = createRouter({
