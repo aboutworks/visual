@@ -1,7 +1,7 @@
 <template>
 	<div class="svganimtion" style="position: relative;">
 
-		<div v-for="(gear, gearName) in gears" :key="gearName" @click="toggleInput(gearName)">
+		<div v-for="(gear, gearName, index) in gears" :key="gearName" @click="toggleInput(gearName)" class="gear-icons" :style="{ animationDelay: `${index * 0.5}s` }">
 			<div @mousedown="onMouseDown($event, gearName, gear)" @mouseup="onMouseUp(gearName, gear)"
 				@touchstart="onMouseDown($event, gearName, gear)" @touchend="onMouseUp(gearName, gear)">
 				<i :class="['gear-icon', gear.rotate]" v-html="icon[gear.svg]" :style="getStyle(gears[gearName])"></i>
@@ -203,5 +203,22 @@ i {
 i svg {
 	width: 100%;
 	height: 100%;
+}
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.gear-icons {
+  opacity: 0;
+  animation: fadeIn 0.5s ease-out forwards;
 }
 </style>

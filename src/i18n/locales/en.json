@@ -1,0 +1,14 @@
+{
+	"greeting": "Hello, {name}!",
+	"senko": {
+		"Title" : "Integrated Command Center",
+		"Per-unit Manufacturing Cost": "Per-unit Manufacturing Cost",
+		"Equipment OEE": "Equipment OEE",
+		"UPPH": "UPPH",
+		"THT Standard Working Time Loss Rate": "THT Standard Working Time Loss Rate",
+		"Target Value": "Target Value",
+		"Achievement Rate": "Achievement Rate",
+		"Previous Value": "Previous Value",
+		"Same Period Value": "Same Period Value"
+	}
+}

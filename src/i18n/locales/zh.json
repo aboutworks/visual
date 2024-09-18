@@ -1,0 +1,14 @@
+{
+	"greeting": "Hello, {name}!",
+	"senko": {
+		"Title" : "指挥控制中心",
+		"Per-unit Manufacturing Cost": "单台制造费",
+		"Equipment OEE": "设备OEE",
+		"UPPH": "UPPH",
+		"THT Standard Working Time Loss Rate": "THT制度工时损失率",
+		"Target Value": "目标值",
+		"Achievement Rate": "目标达成率",
+		"Previous Value": "上期值",
+		"Same Period Value": "同期值"
+	}
+}
