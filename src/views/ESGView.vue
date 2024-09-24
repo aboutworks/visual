@@ -4,7 +4,7 @@
 		<!-- <div class="map" v-html="map"></div> -->
 		<!-- <GlobalMap></GlobalMap> -->
 		<div style="display: flex; justify-content: space-between;" class="contentBox">
-			<div>
+			<div class="contentLeft">
 				<BarChart title="各BG营收达成率百分比|年度"></BarChart>
 				<LineChart title="各BG获利达成率百分比|年度"></LineChart>
 				<LineChart title="净资产收益率%（ROE）趋势"></LineChart>
@@ -30,11 +30,11 @@ import { esgtitle } from '@/svg/title'
 import { esgmap } from '@/svg/map'
 
 import FlashAnchor from '@/components/FlashAnchor'
-import LineChart from '@/components/LineChart'
-import BarChart from '@/components/BarChart'
+import LineChart from '@/components/esg/LineChart'
+import BarChart from '@/components/esg/BarChart'
 import GlobalMap from '@/components/GlobalMap'
 import ModuelBox from '@/components/ModuelBox'
-import NumberBar from '@/components/NumberBar'
+import NumberBar from '@/components/esg/NumberBar'
 import ModuelBox1 from '@/components/ModuelBox1'
 import ModuelBox2 from '@/components/ModuelBox2'
 
@@ -43,7 +43,6 @@ export default {
 		return {
 			title: esgtitle,
 			map: esgmap,
-
 		}
 	},
 	components: {
@@ -59,7 +58,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style >
 :root{
 	--contentBoxHeight: calc(100vh - 74px);
 }
@@ -85,5 +84,11 @@ main {
 
 .contentBox {
 	height: var(--contentBoxHeight)
+}
+.contentLeft{
+	height: var(--contentBoxHeight);
+}
+.contentLeft div{
+	height:calc( var(--contentBoxHeight) / 3);
 }
 </style>

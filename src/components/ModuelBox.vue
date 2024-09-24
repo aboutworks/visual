@@ -54,10 +54,10 @@ h1 {
 
 .lineChartBox {
 	background-color: rgba(255, 255, 255, .3);
-	border-radius: 2rem;
+	border-radius: 1rem;
 	backdrop-filter: blur(10px);
 	border: 1px solid #E2E9EE;
-	padding: 20px;
+	padding: 10px;
 	height: calc(var(--contentBoxHeight) / 3 - 1.5rem)
 }
 </style>

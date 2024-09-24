@@ -10,5 +10,8 @@
 		"Achievement Rate": "目标达成率",
 		"Previous Value": "上期值",
 		"Same Period Value": "同期值"
-	}
+	},
+	"park": {
+		"Title": "指挥控制中心"
+	} 
 }

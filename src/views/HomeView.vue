@@ -4,6 +4,7 @@
      <a href="esg">Esg</a>
      <a href="map">Map</a>
      <a href="senkon">Senkon</a>
+     <a href="park">Park</a>
   </div>
 </template>
 

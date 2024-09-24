@@ -1,22 +1,28 @@
 <template>
 	<header>
-		<div class="animationtitle">
+		<div class="animationtitle" :style="{ position: 'absolute', left: `${left}px`, top: '0' }">
+			<a href="/">
 			<div class="headerTitle"><a  class="effect-shine">{{ $t(title) }}</a></div>
-			<div class="title" v-html="icon.senkontitle"></div>
+			</a>
+			<div class="title" v-html="icon[svg]" style="display: flex; justify-content: left;"></div>
 		</div>
 	</header>
 </template>
 
 <script>
 import { icon } from "@/icons"
+import { number } from "echarts";
 export default {
 	data() {
 		return {
-			icon: icon
+			icon: icon,
 		}
 	},
 	props: {
-		title: String
+		title: String,
+		svg: String,
+		position: String,
+		left: Number,
 	}
 }
 </script>
@@ -35,6 +41,7 @@ header {
 	padding:12px;
 	font-weight: bolder;
 	position: absolute;
+	z-index: 500;
 	width: 100%;
 	font-size: 1.8rem;
 	color: white;

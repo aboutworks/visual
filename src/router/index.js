@@ -27,6 +27,11 @@ const routes = [
     name: 'senkon',
     component: () => import(/* webpackChunkName: "about" */ '../views/SenkonView.vue')
   },
+  {
+    path: '/park',
+    name: 'park',
+    component: () => import(/* webpackChunkName: "about" */ '../views/ParkView.vue')
+  },
 ]
 
 const router = createRouter({

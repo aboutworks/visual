@@ -10,5 +10,8 @@
 		"Achievement Rate": "Achievement Rate",
 		"Previous Value": "Previous Value",
 		"Same Period Value": "Same Period Value"
-	}
+	},
+	"park": {
+		"Title": "Smart Park"
+	} 
 }

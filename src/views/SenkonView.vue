@@ -1,7 +1,7 @@
 <template>
 	<main>
 		<PersonalPart></PersonalPart>
-		<TitlePart title="senko.Title"></TitlePart>
+		<TitlePart title="senko.Title" svg="senkontitle" left="0"></TitlePart>
 
 		<div class="props">
 		<select>
@@ -92,11 +92,14 @@ export default {
 <style scoped>
 main {
 	/* background-color: #000E0B; */
-	background-image: linear-gradient(0deg, #002c25, #000000, #000d0b);
-
-	overflow: hidden;
-	height: 100vh;
-	width: 100vw;
+	/* background-image: linear-gradient(0deg, #002c25, #000000, #000d0b); */
+	background-image: 
+    url('@/assets/png/1.png'),
+    linear-gradient(0deg, #002c25, #000000, #000d0b); 
+  background-size: cover;
+  background-position: center;
+  height: 100vh;  /* 根据需要调整 */
+  width: 100vw;   /* 根据需要调整 */
 }
 
 input[type="date"],

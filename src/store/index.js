@@ -1,8 +1,14 @@
+import FlashAnchor from "@/components/FlashAnchor.vue";
 import { createStore } from "vuex";
 import createPersistedState from "vuex-persistedstate";
 
 export default createStore({
   state: {
+    flashAnchor: {
+      'TIANJIN':{x:723,y:323},
+      'SHANHAI':{x:763,y:393},
+      'SHENZHEN':{x:693,y:403},
+     },
     gear: {
       'geara': {
         "gear1": {

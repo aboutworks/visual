@@ -56,10 +56,10 @@ h1 {
 
 .lineChartBox {
 	background-color: rgba(255, 255, 255, .3);
-	border-radius: 2rem;
+	border-radius: 1rem;
 	backdrop-filter: blur(10px);
 	border: 1px solid #E2E9EE;
-	padding: 2rem;
+	padding: 1rem;
 	margin: 1rem;
 	height: calc(var(--contentBoxHeight) / 3 - 1.5rem)
 }
@@ -80,8 +80,9 @@ h1 {
 	justify-content: center;
 	flex-direction: column;
 	align-items: center;
-	padding:1rem 2rem;
-	border-radius: 20px;
+	padding:0 1rem;
+	font-size: 12px;
+	border-radius: 10px;
 }
 .itemdiv{
 	height:50%;

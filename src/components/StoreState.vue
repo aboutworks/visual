@@ -1,6 +1,6 @@
 <template>
 	<textarea v-model="stringifiedValue" @input="updateStore"></textarea>
-  </template>
+</template>
   
   <script>
   export default {
