@@ -1,3 +1,5 @@
+import { esg } from './esg'
+import { esgtitle } from './esgtitle'
 import {gear} from './gear'
 import { gear1 } from './gear1'
 import { gear2 } from './gear2'
@@ -15,5 +17,7 @@ export const icon = {
 	gear3,
 	gear4,
 	gear5,
-	parktitle
+	parktitle,
+	esg,
+	esgtitle
 }

@@ -1,7 +1,7 @@
 <template>
 	<main>
 		<PersonalPart></PersonalPart>
-		<TitlePart title="senko.Title" svg="senkontitle" left="0"></TitlePart>
+		<TitlePart title="senko.Title" svg="senkontitle" left="0" theme="dark"></TitlePart>
 
 		<div class="props">
 		<select>

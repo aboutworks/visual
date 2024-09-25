@@ -1,8 +1,9 @@
 <template>
-	<div class="lineChartBox">
+	<div class="box">
+		<div class="boxitem">
 		<h1>{{ title }}</h1>
 		<div ref="chart" class="echarts-container"></div>
-	</div>
+	</div></div>
 </template>
 
 <script>
@@ -122,25 +123,46 @@ export default {
 			const options = {
 				xAxis: {
 					type: 'category',
+					boundaryGap: false,
 					data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-					axisLine: {
+					axisLine: { // 设置 X 轴线颜色
 						lineStyle: {
-							color: '#666666'  // X 轴线的颜色
+							color: '#DEEFFA' // 这里修改轴线颜色
 						}
 					},
-					axisLabel: {
-						color: '#666666'  // X 轴标签的颜色
+					axisTick: { // 设置 X 轴刻度线颜色
+						lineStyle: {
+							color: '#DEEFFA' // 修改刻度线颜色
+						}
+					},
+					splitLine: { // 设置 X 轴的网格线颜色
+						lineStyle: {
+							color: '#DEEFFA' // 修改网格线颜色
+						}
+					},
+					axisLabel: { // 设置 X 轴刻度标签颜色
+						color: '#666666' // 修改刻度标签颜色
 					}
 				},
 				yAxis: {
 					type: 'value',
-					axisLine: {
+					axisLine: { // 设置 Y 轴线颜色
 						lineStyle: {
-							color: '#666666'  // Y 轴线的颜色
+							color: '#DEEFFA' // 修改轴线颜色
 						}
 					},
-					axisLabel: {
-						color: '#666666'  // Y 轴标签的颜色
+					axisTick: { // 设置 Y 轴刻度线颜色
+						lineStyle: {
+							color: '#DEEFFA' // 修改刻度线颜色
+						}
+					},
+					splitLine: { // 设置 Y 轴的网格线颜色
+						lineStyle: {
+							color: '#DEEFFA' // 修改网格线颜色
+						}
+					},
+					axisLabel: { // 设置 Y 轴刻度标签颜色
+						color: '#666666' // 修改刻度标签颜色
 					}
 				},
 				series: this.series
@@ -164,13 +186,5 @@ h1 {
 	text-align: left;
 }
 
-.lineChartBox {
-	background-color: rgba(255, 255, 255, .3);
-	border-radius: 1rem;
-	backdrop-filter: blur(10px);
-	border: 1px solid #E2E9EE;
-	padding: 1rem;
-	margin: 1rem;
-	height: calc(var(--contentBoxHeight) / 3 - 1.5rem)
-}
+
 </style>

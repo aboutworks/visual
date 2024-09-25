@@ -1,18 +1,20 @@
 <template>
-	<div style="width: 18vw;" class="lineChartBox">
-		<h1>{{ title }}</h1>
-		<ul class="item">
-			<li>
-				<div style="display: flex; align-items: center; flex-direction: column; width: 100%;">
-					<div>200,000人</div>
-					<div>环比 12.01%</div>
-					<div>同比 12.01%</div>
-				</div>
-				<div class="itemdiv">
-					<canvas width="300" height="300" ref="piechart"></canvas>
-				</div>
-			</li>
-		</ul>
+	<div class="box">
+		<div class="boxitem">
+			<h1>{{ title }}</h1>
+			<ul class="item">
+				<li>
+					<div style="display: flex; align-items: center; flex-direction: column; width: 100%;">
+						<div>200,000人</div>
+						<div>环比 12.01%</div>
+						<div>同比 12.01%</div>
+					</div>
+					<div class="itemdiv">
+						<canvas width="300" height="300" ref="piechart"></canvas>
+					</div>
+				</li>
+			</ul>
+		</div>
 	</div>
 </template>
 
@@ -105,17 +107,6 @@ h1 {
 	width: 100%;
 	text-align: left;
 }
-
-.lineChartBox {
-	background-color: rgba(255, 255, 255, .3);
-	border-radius: 1rem;
-	backdrop-filter: blur(10px);
-	border: 1px solid #E2E9EE;
-	padding: 1rem;
-	margin: 1rem;
-	height: calc(var(--contentBoxHeight) / 3 - 1.5rem)
-}
-
 .item {
 	display: flex;
 	height: calc(100% - 3rem);

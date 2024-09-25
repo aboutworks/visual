@@ -1,10 +1,10 @@
 <template>
-	<header>
-		<div class="animationtitle" :style="{ position: 'absolute', left: `${left}px`, top: '0' }">
-			<a href="/">
-			<div class="headerTitle"><a  class="effect-shine">{{ $t(title) }}</a></div>
-			</a>
-			<div class="title" v-html="icon[svg]" style="display: flex; justify-content: left;"></div>
+	<header :class="[theme,'effect-shine-light']">
+		<div class="animationtitle" ref="animationtitle">
+			<div class="container">
+				<div class="headerTitle overlap"><a href="/" class="effect-shine" :style="{'color':fontcolor}">{{ $t(title) }}</a></div>
+				<div class="title overlap" v-html="icon[svg]" style="display: flex; justify-content: left;"></div>
+			</div>
 		</div>
 	</header>
 </template>
@@ -23,6 +23,17 @@ export default {
 		svg: String,
 		position: String,
 		left: Number,
+		theme:String,
+		fontcolor: String,
+	},
+	mounted() {
+		// if (this.left !== 0) {
+		// 	this.$refs.animationtitle.style.position = 'absolute'
+		// 	this.$refs.animationtitle.style.left = this.left
+		// 	this.$refs.animationtitle.style.top = 0
+		// } else {
+
+		// }
 	}
 }
 </script>
@@ -30,20 +41,18 @@ export default {
 <style scoped>
 header {
 	display: flex;
-	height: var(--headerHeight);
-	display: flex;
 	justify-content: center;
 	align-items: center;
+	height: var(--headerHeight);
 }
 
 .headerTitle {
 	/* height: var(--headerHeight); */
-	padding:12px;
 	font-weight: bolder;
 	position: absolute;
 	z-index: 500;
 	width: 100%;
-	font-size: 1.8rem;
+	font-size: 2rem;
 	color: white;
 	display: flex;
 	justify-content: center;
@@ -67,7 +76,4 @@ header {
 		margin-top: 0;
 	}
 }
-
-
-
 </style>
