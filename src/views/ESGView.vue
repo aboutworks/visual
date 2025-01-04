@@ -59,7 +59,7 @@ export default {
 }
 </script>
 
-<style >
+<style scoped>
 :root{
 	--contentBoxHeight: calc(100vh - 74px);
 }

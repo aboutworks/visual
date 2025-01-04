@@ -1,9 +1,10 @@
 <template>
-	<div class="box" >
-		<div :class="{'boxitem': !form, 'boxitemNone': form}">
-		<h1 v-if="!form">{{ title }}</h1>
-		<div ref="barchart" class="echarts-container" :style="{'height':`${tall}px`}"></div>
-	</div></div>
+	<div class="innerbox">
+		<div :class="{ 'innerboxitem': !form, 'innerboxitemNone': form }">
+			<!-- <h1 v-if="!form">{{ title }}</h1> -->
+			<div ref="barchart" class="echarts-container" :style="{ 'height': `${tall}px` }"></div>
+		</div>
+	</div>
 </template>
 
 <script>
@@ -53,12 +54,8 @@ export default {
 			type: String,
 			default: 'ECharts 示例'
 		},
-		form:Boolean,
-		// form:{
-		// 	type: Boolean,
-		// 	default: true
-		// },
-		tall:Number,
+		form: Boolean,
+		tall: Number,
 		heights: Number
 	},
 	name: 'EChartsComponent',
@@ -83,7 +80,7 @@ export default {
 					bottom: '3%',
 					containLabel: true
 				},
-				toolbox: {
+				toolinnerbox: {
 					feature: {
 						saveAsImage: {}
 					}

@@ -4,10 +4,12 @@
 			<h1>{{ title }}</h1>
 			<ul class="item">
 				<li>
-					<div style="display: flex; align-items: center; flex-direction: column; width: 100%;">
-						<div>200,000人</div>
-						<div>环比 12.01%</div>
-						<div>同比 12.01%</div>
+					<div class="listasdfasdf">
+							<div style="padding-bottom:1rem;color:rgb(0, 160, 233);font-size:1.3rem; font-weight: bolder;">200,000人</div>
+							<div>环比</div>
+							<div style="color:rgb(0, 160, 233);font-size:1.3rem; font-weight: bolder;">12.01%</div>
+							<div>同比</div>
+							<div style="color:rgb(0, 160, 233);font-size:1.3rem; font-weight: bolder;">13.02%</div>
 					</div>
 					<div class="itemdiv">
 						<canvas width="300" height="300" ref="piechart"></canvas>
@@ -97,6 +99,12 @@ export default {
 </script>
 
 <style scoped>
+.listasdfasdf{
+	display: flex; align-items: center; flex-direction: column; width: 100%;
+}
+.listasdfasdf li{
+	padding: 0 !important;
+}
 .echarts-container {
 	width: 100%;
 	height: 100%;
@@ -107,6 +115,7 @@ h1 {
 	width: 100%;
 	text-align: left;
 }
+
 .item {
 	display: flex;
 	height: calc(100% - 3rem);

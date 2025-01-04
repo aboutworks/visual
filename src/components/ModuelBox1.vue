@@ -6,18 +6,11 @@
 				<li v-for="(d, index) in datas" :key="index">
 					<div class="itemdiv">
 						<span>人均营收/当月</span>
-						<transition name="fade">
-							<span style="font-size: 1.2rem; font-weight: bolder; color:#00A0E9">{{ nums }}</span>
-						</transition>
-						<span>元/人</span>
+							<span style="font-size: 1.2rem; font-weight: bolder; color:#00A0E9">{{ nums }}</span> <span>元/人</span>
 					</div>
 					<div class="itemdiv">
-						<span>环比</span>
-						<transition name="fade">
-							<span>{{ incrementPercentage }}%</span>
-						</transition>
-						<span>同比</span>
-						<span>{{ incrementPercentage }}%</span>
+						<span>环比</span> <span>{{ incrementPercentage }}%</span>
+						<span>同比</span> <span>{{ incrementPercentage }}%</span>
 					</div>
 				</li>
 			</ul>
@@ -103,7 +96,7 @@ h1 {
 }
 
 .itemdiv {
-	height: 50%;
+	height: 3rem;
 	width: 100%;
 	display: flex;
 	justify-content: space-between;

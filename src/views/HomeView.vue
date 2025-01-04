@@ -5,6 +5,8 @@
      <a href="map">Map</a>
      <a href="senkon">Senkon</a>
      <a href="park">Park</a>
+     <a href="techmap">TechMap</a>
+     <a href="createnew">CreateNew</a>
   </div>
 </template>
 

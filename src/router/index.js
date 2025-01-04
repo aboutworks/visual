@@ -32,6 +32,21 @@ const routes = [
     name: 'park',
     component: () => import(/* webpackChunkName: "about" */ '../views/ParkView.vue')
   },
+  {
+    path: '/techmap',
+    name: 'techmap',
+    component: () => import(/* webpackChunkName: "about" */ '../views/TechMap.vue')
+  },
+  {
+    path: '/cartoonmap',
+    name: 'cartoonmap',
+    component: () => import(/* webpackChunkName: "about" */ '../views/CartoonMap.vue')
+  },
+  {
+    path: '/createnew',
+    name: 'createnew',
+    component: () => import(/* webpackChunkName: "about" */ '../views/CreateNew.vue')
+  },
 ]
 
 const router = createRouter({
