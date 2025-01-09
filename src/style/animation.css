@@ -43,3 +43,59 @@
 		-webkit-mask-position: -50%;
 	}
 }
+
+
+
+
+
+
+
+.box {
+	/* overflow: hidden;
+	display: grid; */
+	place-content: center;
+	color: white;
+	text-shadow: 0 1px 0 #000;
+
+	/* Define CSS variables */
+	--border-angle: 0turn;
+	/* For animation. */
+	--main-bg: conic-gradient(from var(--border-angle),
+			#050A13,
+			#050A13 5%,
+			#050A13 60%,
+			#050A13 95%);
+	--gradient-border: conic-gradient(from var(--border-angle),
+			transparent 25%,
+			#033f4c,
+			#10b0d0 99%,
+			transparent);
+
+	backdrop-filter: blur(3px);
+	border: solid 1px transparent;
+	background: var(--main-bg) padding-box, var(--gradient-border) border-box;
+	background-position: center center;
+	animation: bg-spin 3s linear infinite;
+}
+
+@keyframes bg-spin {
+	to {
+		--border-angle: 1turn;
+	}
+}
+
+.box:hover {
+	animation-play-state: paused;
+}
+
+.box::after {
+	content: '';
+	display: block;
+	position: absolute;
+	z-index: -1;
+	width: calc(100% - 2px);
+	height: calc(100% - 2px);
+	top: 0px;
+	left: 0px;
+	/* border: 1px solid rgb(4, 94, 114, .5); */
+}

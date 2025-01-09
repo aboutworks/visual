@@ -4,6 +4,7 @@ node_modules
 
 video/
 statics/
+keyboard/
 
 
 # local env files

@@ -47,6 +47,16 @@ const routes = [
     name: 'createnew',
     component: () => import(/* webpackChunkName: "about" */ '../views/CreateNew.vue')
   },
+  {
+    path: '/keyboard',
+    name: 'keyboard',
+    component: () => import(/* webpackChunkName: "about" */ '../views/Keyboard.vue')
+  },
+  {
+    path: '/createnewb',
+    name: 'createnewb',
+    component: () => import(/* webpackChunkName: "about" */ '../views/CreateNewb.vue')
+  },
 ]
 
 const router = createRouter({

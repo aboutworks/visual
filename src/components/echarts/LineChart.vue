@@ -34,18 +34,18 @@ export default {
 					stack: 'Total',
 					data: [150, 232, 201, 154, 190, 330, 410]
 				},
-				// {
-				// 	name: 'Direct',
-				// 	type: 'line',
-				// 	stack: 'Total',
-				// 	data: [320, 332, 301, 334, 390, 330, 320]
-				// },
-				// {
-				// 	name: 'Search Engine',
-				// 	type: 'line',
-				// 	stack: 'Total',
-				// 	data: [820, 932, 901, 934, 1290, 1330, 1320]
-				// }
+				{
+					name: 'Direct',
+					type: 'line',
+					stack: 'Total',
+					data: [320, 332, 301, 334, 390, 330, 320]
+				},
+				{
+					name: 'Search Engine',
+					type: 'line',
+					stack: 'Total',
+					data: [820, 932, 901, 934, 1290, 1330, 1320]
+				}
 			]
 		};
 	},
@@ -56,9 +56,15 @@ export default {
 		},
 		form: Boolean,
 		tall: Number,
-		heights: Number
+		heights: Number,
+		lineLimit: Number, //决定有几个series的，
 	},
 	name: 'EChartsComponent',
+	computed: {
+		getLimitedData() {
+			return this.series.slice(0, this.lineLimit);
+		},
+	},
 	mounted() {
 		this.initChart();
 	},
@@ -78,58 +84,57 @@ export default {
 					left: '3%',
 					right: '4%',
 					bottom: '3%',
-					containLabel: true
-				},
-				toolinnerbox: {
-					feature: {
-						saveAsImage: {}
-					}
+					containLabel: true,
+					backgroundColor: '#F5F5F5' // 设置图表的背景色
 				},
 				xAxis: {
 					type: 'category',
 					boundaryGap: false,
 					data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-					axisLine: { // 设置 X 轴线颜色
+					axisLine: {
 						lineStyle: {
-							color: '#DEEFFA' // 这里修改轴线颜色
+							color: '0F3F51'
 						}
 					},
-					axisTick: { // 设置 X 轴刻度线颜色
+					axisTick: {
 						lineStyle: {
-							color: '#DEEFFA' // 修改刻度线颜色
+							color: '#DEEFFA'
 						}
 					},
-					splitLine: { // 设置 X 轴的网格线颜色
+					splitLine: { // 修改网格线的颜色
+						show: true, // 确保网格线是显示的
 						lineStyle: {
-							color: '#DEEFFA' // 修改网格线颜色
+							color: '#0F3F51', // 网格线颜色
+							type: 'dashed' // 网格线样式：实线、虚线等
 						}
 					},
-					axisLabel: { // 设置 X 轴刻度标签颜色
-						color: '#666666' // 修改刻度标签颜色
+					axisLabel: {
+						color: '#666666'
 					}
 				},
 				yAxis: {
 					type: 'value',
-					axisLine: { // 设置 Y 轴线颜色
+					axisLine: {
 						lineStyle: {
-							color: '#DEEFFA' // 修改轴线颜色
+							color: '#DEEFFA'
 						}
 					},
-					axisTick: { // 设置 Y 轴刻度线颜色
+					axisTick: {
 						lineStyle: {
-							color: '#DEEFFA' // 修改刻度线颜色
+							color: '#DEEFFA'
 						}
 					},
-					splitLine: { // 设置 Y 轴的网格线颜色
+					splitLine: { // 修改网格线的颜色
 						lineStyle: {
-							color: '#DEEFFA' // 修改网格线颜色
+							color: '#0F3F51', // 网格线颜色
+							type: 'dotted' // 网格线样式
 						}
 					},
-					axisLabel: { // 设置 Y 轴刻度标签颜色
-						color: '#666666' // 修改刻度标签颜色
+					axisLabel: {
+						color: '#666666'
 					}
 				},
-				series: this.series
+				series: this.getLimitedData
 			};
 
 			myChart.setOption(options);

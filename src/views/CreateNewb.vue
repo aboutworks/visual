@@ -1,42 +1,24 @@
 <template>
 	<div class="createnew">
-		<Header height="68px" title="成品锯看板"></Header>
-		<main>
-			<div style="display: flex; flex-direction: column;">
-				<div class="box" style="margin-bottom: 16px; height: 400px;">
-					<div style="height: 100%; width: 100%;">
-						<div class="title">排程信息</div>
-						<Table rowLimit="5"></Table>
-					</div>
-				</div>
-				<div style="display: flex; justify-content: space-between;">
-					<div style="flex: 1; margin-right: 16px; height: calc(100% - 32px);">
-						<div class="box" style=" height: 466px; margin-bottom: 16px;">
-							<div style="height: 100%; width: 100%;">
-								<div class="title">产品特性</div>
-								<div style="height: 100%; width: 100%;">
-									<LineChart tall="400"></LineChart>
-								</div>
-							</div>
-						</div>
-						<div class="box" style=" height: 466px;">
-							<div style="height: 100%; width: 100%;">
-								<div class="title">锯切信息</div>
-								<Table rowLimit="7"></Table>
-							</div>
-						</div>
-					</div>
-					<div class="box" style="flex:1; height: 950px; overflow: hidden;">
-						<!-- <video autoplay loop src="@/statics/createnew/1231.mp4" style="transform: scale(1.2); position: absolute; top:3rem; left:-300px" ></video> -->
-						 <Sign></Sign>
-						<Fix></Fix>
-
-
-						<div style="position: absolute; bottom:0rem; left:2rem; font-size: 8rem; font-weight: bolder;">
-							98.{{ randomPart }}<span style="font-size: 2rem;">%</span></div>
-						<div class="image-sequence" style="position: absolute; z-index: -1; top:-00px"></div>
-					</div>
-				</div>
+		<Header height="68px" title="拉直看板"></Header>
+		<main style="padding:16px;">
+			<div style="width:100%;height: calc(20% - 16px) ; margin-bottom:16px; padding:0 16px;" class="box">
+				<div class="title">排程信息</div>
+				<Table rowLimit="2"></Table>
+			</div>
+			<div style="width:100%;height:calc(30% - 16px) ; margin-bottom:16px; padding:0 16px;" class="box">
+				<div class="title">排程信息</div>
+				<LineChart tall="300" lineLimit="1"></LineChart>
+			</div>
+			<div style="width:100%;height: 50%; overflow: hidden;" class="box">
+				<Detail top="100px" left="400px"></Detail>
+				<Fix></Fix>
+				<Lix title="拉直垫块" content="LZDK-01"></Lix>
+				<video autoplay muted loop playsinline class="background-video"
+					style="z-index: 1; position: absolute; top:-450px; left:0; width: 100%; ">
+					<source :src="require('@/statics/createnew/b.webm')" type="video/webm">
+					Your browser does not support the video tag.
+				</video>
 			</div>
 		</main>
 		<footer></footer>
@@ -45,10 +27,11 @@
 
 <script>
 import Header from '@/components/header/create.vue'
-import Fix from '@/components/mom/fix.vue'
-import Sign from '@/components/mom/Detail.vue'
 import LineChart from '@/components/echarts/AiraChart.vue'
 import Table from '@/components/table/createnew.vue'
+import Fix from '@/components/mom/fix.vue'
+import Lix from '@/components/mom/li.vue'
+import Detail from '@/components/mom/Detail.vue'
 export default {
 	data() {
 		return {
@@ -79,7 +62,8 @@ export default {
 		Table,
 		Header,
 		Fix,
-		Sign
+		Detail,
+		Lix
 	}
 
 }
@@ -89,11 +73,28 @@ export default {
 	box-sizing: border-box;
 }
 
-@font-face {
-	font-family: youshe;
-	src: url('/src/assets/fonts/YouSheBiaoTiHei-2.ttf');
+
+.boxlittle {
+	background-color: #002845;
+	backdrop-filter: blur(3px);
+	position: relative;
+	overflow: visible;
 }
 
+.boxlittlelow {
+	content: "";
+	display: block;
+	background-image: url('@/statics/createnew/19.svg');
+	background-repeat: no-repeat;
+	// background-position-x: 50%;
+	// background-position-y: 280px;
+	z-index: 200;
+	width: 30px;
+	height: 200px;
+	top: 200px;
+	position: absolute;
+	overflow: visible;
+}
 
 .title {
 	font-family: youshe;
@@ -105,6 +106,71 @@ export default {
 	font-size: 2rem;
 	text-align: left;
 	padding-left: 4rem;
+}
+
+.item img {
+	position: relative;
+	margin-bottom: 1rem;
+	opacity: 0;
+	transform: translateX(3rem);
+	animation-delay: 6s;
+	animation: fadeInLeft 1s ease forwards;
+
+}
+
+/* 控制每个图片的延迟 */
+.item img:nth-child(1) {
+	animation-delay: 0s;
+}
+
+.item img:nth-child(2) {
+	animation-delay: 1s;
+}
+
+.item img:nth-child(3) {
+	animation-delay: 2s;
+}
+
+.item img:nth-child(4) {
+	animation-delay: 3s;
+}
+
+.item img:nth-child(5) {
+	animation-delay: 4s;
+}
+
+/* 淡入并从右往左移动 */
+@keyframes fadeInLeft {
+	0% {
+		opacity: 0;
+		transform: translateX(3rem);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+/* 10秒后闪烁消失再出现 */
+@keyframes flashOut {
+
+	0%,
+	90% {
+		opacity: 1;
+	}
+
+	95% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 0;
+	}
+}
+
+.item {
+	animation: flashOut 15s infinite;
 }
 
 .createnew,
@@ -120,11 +186,6 @@ html {
 
 
 
-main {
-	height: calc(100vh - var(--heade) - 32px);
-	padding: 16px;
-}
-
 footer {
 	height: 32px;
 	width: 100vw;
@@ -139,57 +200,6 @@ footer {
 	syntax: "<angle>";
 	inherits: true;
 	initial-value: 0turn;
-}
-
-.box {
-	//overflow: hidden;
-	//display: grid;
-	place-content: center;
-	color: white;
-	text-shadow: 0 1px 0 #000;
-
-	/* Define CSS variables */
-	--border-angle: 0turn;
-	/* For animation. */
-	--main-bg: conic-gradient(from var(--border-angle),
-			#050A13,
-			#050A13 5%,
-			#050A13 60%,
-			#050A13 95%);
-	--gradient-border: conic-gradient(from var(--border-angle),
-			transparent 25%,
-			#033f4c,
-			#10b0d0 99%,
-			transparent);
-
-	backdrop-filter: blur(3px);
-	border: solid 1px transparent;
-	background: var(--main-bg) padding-box, var(--gradient-border) border-box;
-	background-position: center center;
-	animation: bg-spin 3s linear infinite;
-}
-
-@keyframes bg-spin {
-	to {
-		--border-angle: 1turn;
-	}
-}
-
-.box:hover {
-	animation-play-state: paused;
-}
-
-.box::after {
-	content: '';
-	display: block;
-	position: absolute;
-	z-index: -1;
-	width: calc(100% - 2px);
-	height: calc(100% - 2px);
-	top: 0px;
-	left: 0px;
-	//border: 1px solid rgb(4, 94, 114, .5);
-
 }
 
 .gradient-border {
@@ -311,6 +321,10 @@ footer {
 
 
 
+header {
+	top: -var(--headerHeight);
+	animation: headerSlideIn 2s ease forwards;
+}
 
 footer {
 	bottom: -var(--footerHeight);
@@ -318,12 +332,24 @@ footer {
 }
 
 main {
-	top: 51.5%;
-	transform: translateY(-50%);
-	opacity: 0;
+	// top: 51.5%;
+	// transform: translateY(-50%);
+	// opacity: 0;
 	animation: mainFadeIn 2s ease 2s forwards;
 }
 
+/* Header 动画 */
+@keyframes headerSlideIn {
+	0% {
+		top: -80px;
+		opacity: 0;
+	}
+
+	100% {
+		top: 0;
+		opacity: 1;
+	}
+}
 
 /* Footer 动画 */
 @keyframes footerSlideIn {
@@ -418,5 +444,55 @@ main {
 	overflow: hidden;
 	clip: rect(0, 900px, 0, 0);
 	animation: noise-anim-2 3s infinite linear alternate-reverse;
+}
+
+
+
+
+.fonttitle:before,
+*:after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	position: relative;
+}
+
+.fonttitle {
+	display: inline-block;
+	color: rgba(255, 255, 255, .1);
+	font-family: youshe;
+	font-size: .9em;
+	position: relative;
+	text-shadow: .03em .03em 0 rgb(255, 255, 255);
+}
+
+.fonttitle:after {
+	content: attr(data-shadow);
+	position: absolute;
+	top: .1em;
+	left: .0em;
+	z-index: -1;
+	text-shadow: none;
+	background-image:
+		linear-gradient(45deg,
+			transparent 45%,
+			hsla(48, 20%, 90%, 1) 45%,
+			hsla(48, 20%, 90%, 1) 55%,
+			transparent 0);
+	background-size: .05em .05em;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+
+	animation: shad-anim 15s linear infinite;
+}
+
+@keyframes shad-anim {
+	0% {
+		background-position: 0 0
+	}
+
+	0% {
+		background-position: 100% -100%
+	}
 }
 </style>

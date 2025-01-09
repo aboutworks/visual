@@ -7,6 +7,8 @@
      <a href="park">Park</a>
      <a href="techmap">TechMap</a>
      <a href="createnew">CreateNew</a>
+     <a href="createnewb">CreateNew B</a>
+     <a href="keyboard">keyboard</a>
   </div>
 </template>
 
