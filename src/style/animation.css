@@ -49,17 +49,12 @@
 
 
 
-
+/* 
 .box {
-	/* overflow: hidden;
-	display: grid; */
 	place-content: center;
 	color: white;
 	text-shadow: 0 1px 0 #000;
-
-	/* Define CSS variables */
 	--border-angle: 0turn;
-	/* For animation. */
 	--main-bg: conic-gradient(from var(--border-angle),
 			#050A13,
 			#050A13 5%,
@@ -76,9 +71,9 @@
 	background: var(--main-bg) padding-box, var(--gradient-border) border-box;
 	background-position: center center;
 	animation: bg-spin 3s linear infinite;
-}
+} */
 
-@keyframes bg-spin {
+/* @keyframes bg-spin {
 	to {
 		--border-angle: 1turn;
 	}
@@ -86,9 +81,9 @@
 
 .box:hover {
 	animation-play-state: paused;
-}
+} */
 
-.box::after {
+/* .box::after {
 	content: '';
 	display: block;
 	position: absolute;
@@ -97,5 +92,4 @@
 	height: calc(100% - 2px);
 	top: 0px;
 	left: 0px;
-	/* border: 1px solid rgb(4, 94, 114, .5); */
-}
+} */

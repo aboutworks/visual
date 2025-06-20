@@ -1,27 +1,58 @@
 <template>
 	<div class="createnew">
-		<Header height="68px" title="拉直看板"></Header>
+		<Header height="68px" title="挤压看板"></Header>
 		<main style="padding:16px;">
 			<div style="width:100%;height: calc(20% - 16px) ; margin-bottom:16px; padding:0 16px;" class="box">
 				<div class="title">排程信息</div>
 				<Table rowLimit="2"></Table>
 			</div>
-			<div style="width:100%;height:calc(30% - 16px) ; margin-bottom:16px; padding:0 16px;" class="box">
-				<div class="title">挤压压力</div>
-				<LineChart tall="300" lineLimit="1"></LineChart>
+			<div style="width:100%;height:calc(20% - 16px) ; margin-bottom:16px; padding:0 16px;" class="box">
+
+				<div class="title">挤压动态</div>
+				<div style="display: flex; justify-content: space-between;">
+					<div
+						style="width: 300px; height: 200px; display: flex; justify-content: center; align-items: center;">
+						<div class="gradient-box">
+							<div>
+								<div style="font-size:3rem">第五棒</div>
+								<div>2025-01-22 15:36:18</div>
+							</div>
+						</div>
+					</div>
+
+					<div style="flex:1">
+						<LineChart tall="200" lineLimit="1"></LineChart>
+					</div>
+				</div>
 			</div>
-			<div style="width:100%;height: 50%; overflow: hidden;" class="box">
-				<div style="position: relative; height: 100%;">
+			<div style="width:100%;height: 60%; overflow: hidden; display: flex; justify-content: space-between;">
+				<div style="flex:.5">
+					<div style="width:100%;height:33%; margin-bottom:16px; padding:0 16px;" class="box">
+						<div class="title">出口温度</div>
+						<LineChart tall="200" lineLimit="1"></LineChart>
+					</div>
+
+					<div style="width:100%;height:33% ; margin-bottom:16px; padding:0 16px;" class="box">
+						<div class="title">挤压压力</div>
+						<LineChart tall="200" lineLimit="1"></LineChart>
+					</div>
+					<div style="width:100%;height:33% ; margin-bottom:16px; padding:0 16px;" class="box">
+						<div class="title">挤压速度</div>
+						<LineChart tall="200" lineLimit="1"></LineChart>
+					</div>
+				</div>
+				<div style="position: relative; height: 100%; flex:.5" class="box">
 					<Detail top="100px" left="400px"></Detail>
 					<Fix></Fix>
-					<div style="position: absolute; bottom:8px; width: 100%; display: flex; justify-content: center; align-items: center;">
+					<!-- <div
+						style="position: absolute; bottom:8px;margin-left:2rem; width: 100%; display: flex; justify-content: center; align-items: center;">
 						<Lix title="拉直垫块" content="LZDK-01"></Lix>
 						<Lix title="拉伸率" content="%"></Lix>
 						<Lix title="拉伸次数" content=""></Lix>
-					</div>
+					</div> -->
 					<video autoplay muted loop playsinline class="background-video"
-						style="z-index: 1; position: absolute; top:-450px; left:0; width: 100%; ">
-						<source :src="require('@/statics/createnew/b.webm')" type="video/webm">
+						style="z-index: 1; position: absolute; top:30px; left:0; width: 100%; ">
+						<source :src="require('@/statics/createnew/jy.webm')" type="video/webm">
 						Your browser does not support the video tag.
 					</video>
 				</div>
@@ -79,6 +110,23 @@ export default {
 	box-sizing: border-box;
 }
 
+.gradient-box {
+	width: 300px;
+	height: 200px;
+	padding: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: white;
+
+	/* Background gradient from top to bottom */
+	background-image: linear-gradient(to bottom, rgba(0, 15, 27, 0) 0%, rgb(0, 36, 65) 50%, rgba(0, 15, 27, 0) 100%);
+
+	/* Border gradient */
+	border: 2px solid transparent;
+	border-image: linear-gradient(to bottom, rgba(0, 15, 27, 0) 0%, rgb(0, 73, 134) 50%, rgba(0, 15, 27, 0) 100%);
+	border-image-slice: 1;
+}
 
 .title {
 	font-family: youshe;

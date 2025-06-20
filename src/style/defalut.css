@@ -94,6 +94,22 @@ select{
 	--padding:1rem;
 }
 
+
+
+.container {
+	position: relative;
+	width: 500px;
+	display: flex;
+	justify-content: center; /* 水平居中 */
+	align-items: center; /* 垂直居中 */
+  }
+  
+  .overlap {
+	position: absolute; /* 使元素重叠 */
+	color: white;
+  }
+
+
 .box {
 	width: 100%;
 	padding-bottom: 1rem;
@@ -113,18 +129,49 @@ select{
 
 }
 
-.container {
-	position: relative;
-	width: 500px;
-	display: flex;
-	justify-content: center; /* 水平居中 */
-	align-items: center; /* 垂直居中 */
+
+
+
+  @property --a {
+	syntax: "<angle>";
+	inherits: false;
+	initial-value: -100turn; 
+  }
+  @property --i {
+	syntax: "<number>";
+	inherits: false;
+	initial-value: 1; 
   }
   
-  .overlap {
-	position: absolute; /* 使元素重叠 */
-	color: white;
+  .box {
+	aspect-ratio: 1;
+	border-radius: 0px;
+	border: 1px solid #0c8fd0;
+	padding: 3px;
+	mask: 
+	  conic-gradient(#000 0 0) content-box,
+	  linear-gradient(calc(mod(var(--a),180deg)*var(--i) + var(--_a,45deg)),
+		#0000 30%,#000 40% 60%,#0000 70%) subtract,
+	  conic-gradient(#000 0 0) padding-box;
+	transition: --i 0s,--a 300s linear;
+	cursor: pointer;
+	@starting-style {
+	  --a: 0turn;
+	}
   }
+  .box.alt {
+	--_a: -45deg;
+  }
+  .box:hover {
+	--i: 0;
+	--a: 0turn;
+	transition: --i .5s ease-out,--a 0s .5s;
+  }
+  
+
+
+
+
 @import url(animation.css);
 
 

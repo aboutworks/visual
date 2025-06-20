@@ -1,5 +1,6 @@
 <template>
-	<table>
+	<div style="color:white">
+	 <table>
 		<thead>
 			<tr>
 				<th>日期</th>
@@ -40,7 +41,8 @@
 				<td>{{ item.remark }}</td>
 			</tr>
 		</tbody>
-	</table>
+	</table> 
+	</div>
 </template>
 
 <script>
